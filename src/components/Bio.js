@@ -1,23 +1,17 @@
 import React from 'react'
+import profilePic from './profile-pic.png'
 
-import profilePic from './profile-pic.jpg'
-
-class Bio extends React.Component {
-  render () {
-    return (
-      <p>
-        <img
-          src={profilePic}
-          alt={`Kyle Mathews`}
-        />
-        Written by <strong>Kyle Mathews</strong> who lives and works in San
-        Francisco building useful things.{' '}
-        <a href="https://twitter.com/kylemathews">
-          You should follow him on Twitter
-        </a>
-      </p>
-    )
-  }
-}
+const Bio = () => (
+  <p>
+    <img
+      src={profilePic}
+      alt={`Andrew Usher`}
+    />
+    I'm <strong>Andrew Usher</strong> and I live and work in Memphis having fun with front-end!{' '}
+    <a href="https://twitter.com/andrewusher17">
+      You can follow me on Twitter as well!
+    </a>
+  </p>
+)
 
 export default Bio
