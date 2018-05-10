@@ -52,7 +52,7 @@
     "url": "git+https://github.com/noahg/gatsby-starter-blog-no-styles.git"
   },
   "scripts": {
-    "dev": "gatsby develop",
+    "dev": "gatsby develop --host localhost",
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
