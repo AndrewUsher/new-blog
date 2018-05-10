@@ -1,32 +1,20 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import ThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import Header from '../components/Header'
+import muiTheme from '../utils/muiTheme'
+import '../styles/index.styl'
 
 class Template extends React.Component {
   render () {
-    const { location, children } = this.props
-    let header
-    if (location.pathname === '/') {
-      header = (
-        <h1>
-          <Link to={'/'} >
-                        Gatsby Starter Blog
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3>
-          <Link to={'/'}>
-                        Gatsby Starter Blog
-          </Link>
-        </h3>
-      )
-    }
+    const { children, location } = this.props
     return (
-      <div>
-        {header}
-        {children()}
-      </div>
+      <ThemeProvider muiTheme={muiTheme}>
+        <div>
+          <Header />
+          {children()}
+        </div>
+      </ThemeProvider>
     )
   }
 }
