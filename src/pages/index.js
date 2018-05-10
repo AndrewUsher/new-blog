@@ -2,11 +2,15 @@ import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
+import FlatButton from 'material-ui/FlatButton'
+import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card'
+import Paper from 'material-ui/Paper'
+import '../styles/_home.styl'
 
 import Bio from '../components/Bio'
 
 class BlogIndex extends React.Component {
-  render() {
+  render () {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
@@ -17,15 +21,22 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
-            <div key={node.fields.slug}>
-              <h3>
-                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
-                  {title}
-                </Link>
-              </h3>
-              <small>{node.frontmatter.date}</small>
-              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-            </div>
+            <Paper zDepth={1} className="post">
+              <Card key={node.fields.slug}>
+                <CardHeader
+                  title={title}
+                  subtitle={node.frontmatter.date}
+                />
+                <CardText>
+                  {node.excerpt}
+                </CardText>
+                <CardActions>
+                  <Link to={node.fields.slug}>
+                    <FlatButton label="Read More" />
+                  </Link>
+                </CardActions>
+              </Card>
+            </Paper>
           )
         })}
       </div>
