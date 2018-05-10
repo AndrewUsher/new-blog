@@ -1,24 +1,31 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
+import Paper from 'material-ui/Paper'
 import get from 'lodash/get'
 
 import Bio from '../components/Bio'
+import '../styles/_blog-post.styl'
 
 class BlogPostTemplate extends React.Component {
   render () {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const { previous, next } = this.props.pathContext
+    const styles = {
+      paddingLeft: 20,
+      maxWidth: 1600,
+      marginLeft: 'auto',
+      marginRight: 'auto'
+    }
 
     return (
-      <div>
+      <div className="blog-post">
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-        <h1>{post.frontmatter.title}</h1>
-        <p>{post.frontmatter.date}</p>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr />
-        <Bio />
+        <h1 style={styles}>{post.frontmatter.title}</h1>
+        <p style={styles}>Published on {post.frontmatter.date}</p>
+        <Paper className="post-content" zDepth={2} dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Bio newDepth={2} />
 
         <ul>
           {previous && (
