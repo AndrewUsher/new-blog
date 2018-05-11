@@ -26,7 +26,7 @@
     "gatsby-transformer-remark": "^1.7.1",
     "gatsby-transformer-sharp": "^1.6.1",
     "lodash": "^4.15.0",
-    "material-ui": "^0.20.0"
+    "material-ui": "^1.0.0-beta.47"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
