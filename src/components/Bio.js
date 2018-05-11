@@ -1,10 +1,10 @@
 import React from 'react'
 import profilePic from './profile-pic.png'
-import Paper from 'material-ui/Paper'
+import Card from 'material-ui/Card'
 import '../styles/_bio.styl'
 
-const Bio = ({ newDepth }) => (
-  <Paper className="bio" zDepth={newDepth || 1}>
+const Bio = () => (
+  <Card className="bio" raised>
     <img
       src={profilePic}
       alt={`Andrew Usher`}
@@ -15,7 +15,7 @@ const Bio = ({ newDepth }) => (
         You can follow me on Twitter as well!
       </a>
     </p>
-  </Paper>
+  </Card>
 )
 
 export default Bio
