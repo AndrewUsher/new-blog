@@ -8,7 +8,7 @@ import Bio from '../components/Bio'
 import '../styles/_blog-post.styl'
 
 class BlogPostTemplate extends React.Component {
-  render () {
+  render() {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const { previous, next } = this.props.pathContext
@@ -24,7 +24,7 @@ class BlogPostTemplate extends React.Component {
         <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
         <h1 style={styles}>{post.frontmatter.title}</h1>
         <p style={styles}>Published on {post.frontmatter.date}</p>
-        <Paper className="post-content" zDepth={2} dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Paper className="post-content" elevation={7} dangerouslySetInnerHTML={{ __html: post.html }} />
         <Bio newDepth={2} />
 
         <ul>
