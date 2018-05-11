@@ -3,6 +3,7 @@ module.exports = {
     title: 'Casual Cognitions',
     author: 'Andrew Usher'
   },
+  pathPrefix: '/new-blog',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
