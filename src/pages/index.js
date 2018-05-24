@@ -3,7 +3,6 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Card, { CardActions, CardHeader, CardContent } from 'material-ui/Card'
-import Paper from 'material-ui/Paper'
 import Button from 'material-ui/Button'
 import CssBaseline from 'material-ui/CssBaseline'
 import { withStyles } from 'material-ui/styles'
@@ -23,7 +22,7 @@ class BlogIndex extends React.Component {
         <CssBaseline />
         <Bio />
         {posts.map(({ node }) => {
-          const title = get(node, 'frontmatter.title') || node.fields.slug
+          const title = node.frontmatter.title || node.fields.slug
           return (
             <Card key={node.fields.slug} className="post" raised>
               <CardHeader
