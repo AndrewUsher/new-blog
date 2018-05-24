@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import get from 'lodash/get'
 import Helmet from 'react-helmet'
 import Card, { CardActions, CardHeader, CardContent } from 'material-ui/Card'
 import Button from 'material-ui/Button'
@@ -12,8 +11,9 @@ import Bio from '../components/Bio'
 
 class BlogIndex extends React.Component {
   render () {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const posts = get(this, 'props.data.allMarkdownRemark.edges')
+    const { title: siteTitle } = this.props.data.site.siteMetadata
+    const { edges: posts } = this.props.data.allMarkdownRemark
+
     const { classes } = this.props
 
     return (
