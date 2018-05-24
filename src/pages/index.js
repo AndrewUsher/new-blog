@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import Card, { CardActions, CardHeader, CardContent } from 'material-ui/Card'
@@ -47,6 +48,11 @@ class BlogIndex extends React.Component {
 }
 
 export default withStyles()(BlogIndex)
+
+BlogIndex.propTypes = {
+  classes: PropTypes.object,
+  data: PropTypes.object.isRequired
+}
 
 export const pageQuery = graphql`
   query IndexQuery {
