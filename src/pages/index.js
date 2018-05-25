@@ -7,7 +7,7 @@ import Button from 'material-ui/Button'
 import CssBaseline from 'material-ui/CssBaseline'
 import { withStyles } from 'material-ui/styles'
 import '../styles/_home.styl'
-
+import '../styles/prism-theme.css'
 import Bio from '../components/Bio'
 
 class BlogIndex extends React.Component {
