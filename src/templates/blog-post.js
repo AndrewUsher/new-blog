@@ -13,8 +13,8 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
     const { previous, next } = this.props.pathContext
     const styles = {
-      paddingLeft: 20,
-      maxWidth: 1600,
+      maxWidth: 1200,
+      width: '95%',
       marginLeft: 'auto',
       marginRight: 'auto'
     }
